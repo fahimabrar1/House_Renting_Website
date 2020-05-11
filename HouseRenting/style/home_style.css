@@ -1,0 +1,87 @@
+html,
+body {
+    height: 100%;
+}
+
+.mynav {
+    background-image: url(../resources/home_bg.jpg);
+    height: auto;
+    width: auto;
+    background-position: center;
+    padding-bottom:200px;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: contain;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: white;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.navbar .navbar-nav {
+    margin-left: auto;
+}
+
+.hero-section {
+    margin-top: 200px;
+}
+
+.hero-section .hero-text-cont {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 1rem;
+    -webkit-box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.75);
+}
+
+.hero-section .Login-form {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    box-shadow: 1rem;
+    -webkit-box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.75);
+}
+
+.hero-section .Login-form .btn {
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.footer-section {
+    background-color: #393939;
+    padding-top: 20px;
+
+}
+
+.footer-section .container {
+    font-size: 12px;
+}
+
+.footer-section .copyright-option {
+    background-color: black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer-section .copyright-option .row .d-inline {
+    padding-left: 10px;
+    padding-right: 10px;
+}

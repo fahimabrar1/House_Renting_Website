@@ -1,0 +1,83 @@
+html,
+body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 80%;
+    align-items: center;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 0px;
+    /* this needs to be bigger than footer height*/
+}
+
+.navbar {
+    background-color: #393939;
+    background-size: contain;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: white;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.navbar .navbar-nav {
+    margin-left: auto;
+}
+
+.site-section .descripton{
+    padding: 7rem;
+}
+.media-38289 {
+    background-color: whitesmoke;
+    padding-bottom: 1rem;
+    box-shadow: 1rem;
+    -webkit-box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.25);
+    box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.25);
+}
+.ftco-blocks-cover-1 .site-section-cover .container .media-38289 {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    box-shadow: 1rem;
+    -webkit-box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.25);
+    box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.25);
+}
+
+
+.footer-section {
+
+    position: relative;
+    /* negative value of footer height */
+    clear: both;
+    padding-top: 20px;
+    background-color: #393939;
+    padding-top: 20px;
+
+}
+
+.footer-section .container {
+    font-size: 12px;
+}
+
+.footer-section .copyright-option {
+    background-color: black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer-section .copyright-option .row .d-inline {
+    padding-left: 10px;
+    padding-right: 10px;
+}
