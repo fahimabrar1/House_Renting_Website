@@ -72,8 +72,11 @@ body {
 }
 
 .footer-section .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
     font-size: 12px;
 }
+
 
 .footer-section .copyright-option {
     background-color: black;

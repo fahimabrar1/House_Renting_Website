@@ -89,7 +89,7 @@
         <div class="site-section">
             <div class="container">
                 <div class="row">
-                    <div class="descripton col-md-6">
+                    <div class="descripton col">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non alias labore similique, laboriosam consequuntur tempora, quas accusantium voluptatibus eius, maiores, minima! Ipsam tempore ex qui voluptatum quo voluptas! Incidunt, pariatur.</p>
                         <p>Dolorem quaerat tenetur corporis praesentium, soluta debitis culpa asperiores, minus delectus quibusdam amet recusandae aliquam voluptatibus dicta quis, facere tempora eum placeat repellendus maxime nesciunt voluptates totam sapiente commodi. Tenetur.</p>
                         <p>Labore natus ullam suscipit distinctio debitis voluptas minima ipsam. Odit, reprehenderit minima distinctio, dolorum ipsam velit, minus labore eum commodi quia quae doloribus impedit blanditiis architecto fugiat delectus provident quas.</p>
@@ -97,7 +97,18 @@
                         <p>Mollitia impedit omnis ullam earum est, quaerat consectetur voluptates quia, dolore asperiores ipsum eligendi quae iste, facere porro debitis nostrum obcaecati culpa eius perspiciatis alias distinctio. Perferendis, magnam mollitia fuga.</p>
                         <p><a href="#" class="btn btn-danger text-white">Contact Agent</a></p>
                     </div>
-
+                    
+                    <div class="update-section col">
+                        <div class="update">
+                            <div class="row align-items-center justify-content-center text-center">
+                                <button type="button" class="btn btn-light mb-4 p-3 col-md-12">UPDATE</button>
+                            </div>
+                            <div class="row align-items-center justify-content-center text-center">
+                                <button type="button" class="btn btn-light mt-4 p-3 col-md-12">DELETE HOUSE</button>
+                            </div>
+                            
+                        </div>
+                    </div>
                     <!--Other Contents can be added-->
                 </div>
             </div>

@@ -133,7 +133,7 @@
                     <div class="col-lg-4">
                         <div class="ft-about">
                             <div class="logo">
-                                <a class="navbar-brand text-white" href="../HouseRenting/index.php"> <img src="resources/HouseRenting.png" alt="#">
+                                <a class="navbar-brand text-white" href="../HouseRenting/index.php"> <img src="../resources/HouseRenting.png" alt="#">
                                     <h5>HOUSE RENT</h5>
                                 </a>
                             </div>

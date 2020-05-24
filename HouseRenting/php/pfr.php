@@ -1,8 +1,4 @@
 <?php
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error); 
-        } 
     echo "Ready To Signup ";
     session_start();
     echo $_SESSION['email'];
@@ -15,7 +11,14 @@
         $squarearea=$_POST['sqft_pfr'];
         $description=$_POST['description_pfr'];
         $price=$_POST['price_pfr'];
-        $user="SELECT iduser FROM `user` WHERE Email='fahim.abrar101@gmail.com'";
+        
+        $img="../resources/".$_FILES['image']['name'];
+        $target="../resources/".basename($_FILES['image']['name']);
+
+        if (move_uploaded_file($_FILES['image']['name'], $target)) {
+            echo "Moveds image";
+        }
+            $user="SELECT iduser FROM `user` WHERE Email='fahim.abrar101@gmail.com'";
             if($temp=$conn->query($user)){
                 if ($temp->num_rows == 1 ) {
 
@@ -23,15 +26,16 @@
                 $getid=$temp_getid["iduser"];
                 echo $getid;
                 }
-        }else{
-            echo "query error";
-        }
+                }else{
+                    echo "query error";
+                }
 
         $sql="INSERT INTO `rent_house_type`(
                     `House_Type`,
                     `BedRooms`,
                     `BathRooms`,
                     `House_Title`,
+                    `SrcImg`,
                     `Square_Area`,
                     `Description`,
                     `Price`,
@@ -42,6 +46,7 @@
                     $bedrooms,
                     $bathrooms,
                     '$housetitle',
+                    '$img',
                     $squarearea,
                     '$description',
                     $price,
@@ -56,7 +61,7 @@
         $city=$_POST['city_pfr'];
         $streetname=$_POST['streetname_pfr'];
         $postalcode=$_POST['postcode_pfr'];
-        $Thana=$_POST['thana_pfr'];
+        $thana=$_POST['thana_pfr'];
         $roadno=$_POST['road_pfr'];
         $sqll="INSERT INTO `rent_house_type_address`(
                     `iduser`,
@@ -73,7 +78,7 @@
                     '$city',
                     '$streetname',
                     '$postalcode',
-                    '$Thana',
+                    '$thana',
                     '$roadno'
                 )";
         if($conn->query($sqll)){

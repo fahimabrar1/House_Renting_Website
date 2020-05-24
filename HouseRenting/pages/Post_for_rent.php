@@ -5,6 +5,7 @@
     require_once("../php/pfr.php");
 ?>
 
+
 <!doctype html>
 <html lang="en">
 
@@ -79,7 +80,7 @@
             <div class="container" id="main">
                 <div class="row justify-content-md-center">
                     <div class="body-content col-sm-10">
-                        <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
+                        <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" enctype="multipart/form-data">
                             <div class="realestate-tabpane">
                                 <div class="container tab-content">
                                     <div class="tab-pane active" id="for-rent" role="tabpanel" aria-labelledby="rent-tab">
@@ -154,6 +155,12 @@
                                                 <textarea name="description_pfr" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
                                             </div>
 
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 form-group">
+                                                   <input type="file" name="image">
+
+                                            </div>
                                         </div>
 
                                         <div class="row">

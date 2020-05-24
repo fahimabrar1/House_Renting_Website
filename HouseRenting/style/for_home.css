@@ -34,9 +34,7 @@ body {
     margin-left: auto;
 }
 
-.site-section .descripton{
-    padding: 7rem;
-}
+
 .media-38289 {
     background-color: whitesmoke;
     padding-bottom: 1rem;
@@ -45,6 +43,7 @@ body {
     -moz-box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.25);
     box-shadow: 6px 6px 31px -8px rgba(0, 0, 0, 0.25);
 }
+
 .ftco-blocks-cover-1 .site-section-cover .container .media-38289 {
     background-color: rgba(255, 255, 255, 0.5);
     padding-bottom: 1rem;
@@ -80,4 +79,21 @@ body {
 .footer-section .copyright-option .row .d-inline {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+/*for single home*/
+.site-section .descripton {
+    padding: 7rem;
+}
+
+.site-section .update-section {
+    padding: 7rem;
+}
+
+.site-section .update-section .update {
+    background-color: #dc3646;
+    padding: 3rem 2rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+
 }

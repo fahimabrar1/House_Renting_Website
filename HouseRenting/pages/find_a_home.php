@@ -1,8 +1,11 @@
 <?php
-    require_once("../php/page.php");
+    require_once("../php/connect.php");
 ?>
 <?php
-    require_once("../php/connect.php");
+    require_once("../php/searchpages.php");
+?>
+<?php
+    require("../php/page.php");
 ?>
 
 <!doctype html>
@@ -36,7 +39,6 @@
                     <ul class="navbar-nav">
 
                         <?php
-                        session_start();
                             echo   "<li class=\"nav-item active\">
                             <a class=\"nav-link text-white\" href=\"../pages/index.php\">Home <span class=\"sr-only\">(current)</span></a>
                         </li>
@@ -49,7 +51,7 @@
                          if(isset($_SESSION['email'])){
                                  echo "
                             <li class=\"nav-item\">
-                                <a class=\"nav-link text-white\" href=\"../HouseRenting/php/logout.php\">Log out</a>
+                                <a class=\"nav-link text-white\" href=\"../php/logout.php\">Log out</a>
                             </li>
                             ";
                             }else{
@@ -162,10 +164,14 @@
             <div class="container">
                 <div class="row">
 
+
                     <?php
                         getpage("../resources/img_1.jpg","2911 Sq Ft.","2.","2.","$570,000","156/10 Sapling Street, Harrison, ACT 2914");
                     ?>
-
+                    <?php
+                        search($htres,$presult);
+                    ?>
+<!--
                     <?php
                         getpage("../resources/img_2.jpg","2911 Sq Ft.","2.","2.","$1570,000","156/10 Sapling Street, Harrison, ACT 2914");
                     ?>
@@ -195,6 +201,7 @@
                     <?php
                         getpage("../resources/img_2.jpg","2911 Sq Ft.","2.","2.","$1570,000","156/10 Sapling Street, Harrison, ACT 2914");
                     ?>
+-->
 
                 </div>
             </div>

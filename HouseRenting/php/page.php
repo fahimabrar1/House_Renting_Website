@@ -1,5 +1,5 @@
 <?php
-   function getpage($src,$sq,$bedroom,$bathroom,$price,$location){
+     function getpage($src,$sq,$bedroom,$bathroom,$price,$location){
          $var="<div class=\"col-md-4 mb-5\">
                         <div class=\"media-38289 rounded\">
                             <a href=\"../pages/find_a_home-single_page.php\" class=\"d-block\"><img src=$src alt=\"Image\" class=\"img-fluid\"></a>
