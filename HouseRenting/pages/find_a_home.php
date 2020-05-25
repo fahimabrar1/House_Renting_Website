@@ -166,42 +166,12 @@
 
 
                     <?php
-                        getpage("../resources/img_1.jpg","2911 Sq Ft.","2.","2.","$570,000","156/10 Sapling Street, Harrison, ACT 2914");
+                        getpage("../resources/img_1.jpg","2911 Sq Ft.","2.","2.","$570,000","156/10 Sapling Street, Harrison, ACT 2914","Lorem","Local","1");
                     ?>
                     <?php
                         search($htres,$presult);
                     ?>
-<!--
-                    <?php
-                        getpage("../resources/img_2.jpg","2911 Sq Ft.","2.","2.","$1570,000","156/10 Sapling Street, Harrison, ACT 2914");
-                    ?>
 
-                    <?php
-                        getpage("../resources/img_3.jpg","2911 Sq Ft.","2.","2.","$2570,000","156/10 Sapling Street, Harrison, ACT 2914");
-                    ?>
-
-                    <?php
-                        getpage("../resources/img_2.jpg","2911 Sq Ft.","2.","2.","$570,000","156/10 Sapling Street, Harrison, ACT 2914");
-                    ?>
-                    <?php
-                        getpage("../resources/img_1.jpg","2911 Sq Ft.","2.","2.","$3570,000","156/10 Sapling Street, Harrison, ACT 2914");
-                    ?>
-                    <?php
-                        getpage("../resources/img_1.jpg","2911 Sq Ft.","2.","2.","$1570,000","156/10 Sapling Street, Harrison, ACT 2914");
-                    ?>
-
-                    <?php
-                        getpage("../resources/img_2.jpg","2911 Sq Ft.","2.","2.","$570,000","156/10 Sapling Street, Harrison, ACT 2914");
-                    ?>
-
-                    <?php
-                        getpage("../resources/img_3.jpg","2911 Sq Ft.","2.","2.","$570,000","156/10 Sapling Street, Harrison, ACT 2914");
-                    ?>
-
-                    <?php
-                        getpage("../resources/img_2.jpg","2911 Sq Ft.","2.","2.","$1570,000","156/10 Sapling Street, Harrison, ACT 2914");
-                    ?>
--->
 
                 </div>
             </div>

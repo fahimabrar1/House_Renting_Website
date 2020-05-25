@@ -60,22 +60,70 @@
     <!-- Body Content START -->
     <div class="body-content">
         <div class="ftco-blocks-cover-1">
-            <div class="site-section-cover overlay p-5" data-stellar-background-ratio="0.5" style="background-image: url('../resources/hero_1.jpg')">
+           
+           <?php
+            $src=$_GET['src'];
+            
+            $var= "<div class=\"site-section-cover overlay p-5\" data-stellar-background-ratio=\"0.5\" style=\"background-image: url('";
+
+            $var1="')\">";
+
+            echo $var;
+            echo $src;
+            echo $var1;
+           ?> 
                 <div class="container">
                     <div class="row align-items-center justify-content-center text-center">
                         <div class="col-md-7">
-
-                            <h1 class="mb-2 mt-2">Beautiful House In Bangladesh</h1>
-                            <p class="text-center mb-5"><span class="small address d-flex align-items-center justify-content-center"> <span class="icon-room mr-3 text-primary"></span> <span>156/10 Sapling Street, Harrison, ACT 2914</span></span></p>
+                            <?php
+                            $title=$_GET['title'] ;
+                            echo "<h1 class=\"mb-2 mt-2\">";
+                            echo $title;
+                            echo "</h1>";
+                            ?>
+                            <p class="text-center mb-5"><span class="small address d-flex align-items-center justify-content-center"> <span class="icon-room mr-3 text-primary"></span> 
+                            <?php
+                                $location=$_GET['location'];
+                                echo "<span>";
+                                echo $location;
+                                echo "</span>";
+                              ?>
+                            </span></p>
 
                             <div class="d-flex media-38289 justify-content-around mb-3">
-                                <div class="sq d-flex align-items-center"><i class="fas fa-vector-square pr-1"></i><span>2911 Sq Ft.</span></div>
-                                <div class="bed d-flex align-items-center"><i class="fas fa-bed pr-1"></i><span>2.</span></div>
-                                <div class="bath d-flex align-items-center"><i class="fas fa-bath pr-1"></i><span>2</span></div>
+                                <div class="sq d-flex align-items-center"><i class="fas fa-vector-square pr-1"></i>
+                                <?php
+                                $sq=$_GET['sq'];
+                                echo "<span>";
+                                echo $sq;
+                                echo " Sq Ft.</span>";
+                                 ?>
+                             </div>
+                                <div class="bed d-flex align-items-center"><i class="fas fa-bed pr-1"></i>
+                                <?php
+                                $bedroom=$_GET['bedroom'];
+                                echo "<span>";
+                                echo $bedroom;
+                                echo "</span>";
+                                 ?>
+                                </div>
+                                <div class="bath d-flex align-items-center"><i class="fas fa-bath pr-1"></i>
+                                <?php
+                                $bathroom=$_GET['bathroom'];
+                                echo "<span>";
+                                echo $bathroom;
+                                echo "</span>";
+                                 ?>
+                             </div>
                             </div>
                             <div class="container">
                                 <div class="row justify-content-center media-38289 mb-5">
-                                    <span class="h1 text-danger d-block">$1,570,000</span>
+                                    <?php
+                                $price=$_GET['price'];
+                                echo "<span class=\"h1 text-danger d-block\">";
+                                echo $price;
+                                echo "</span>";
+                                 ?>
                                 </div>
                             </div>
                             <p><a href="#" class="btn btn-danger text-white px-4 py-3">Buy Now</a></p>
@@ -90,14 +138,17 @@
             <div class="container">
                 <div class="row">
                     <div class="descripton col">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non alias labore similique, laboriosam consequuntur tempora, quas accusantium voluptatibus eius, maiores, minima! Ipsam tempore ex qui voluptatum quo voluptas! Incidunt, pariatur.</p>
-                        <p>Dolorem quaerat tenetur corporis praesentium, soluta debitis culpa asperiores, minus delectus quibusdam amet recusandae aliquam voluptatibus dicta quis, facere tempora eum placeat repellendus maxime nesciunt voluptates totam sapiente commodi. Tenetur.</p>
-                        <p>Labore natus ullam suscipit distinctio debitis voluptas minima ipsam. Odit, reprehenderit minima distinctio, dolorum ipsam velit, minus labore eum commodi quia quae doloribus impedit blanditiis architecto fugiat delectus provident quas.</p>
-                        <p>Asperiores temporibus adipisci dolor quasi assumenda est, itaque corrupti, neque facilis beatae natus voluptatibus aperiam mollitia esse ipsam! Quam perferendis facere sed beatae repudiandae rerum laudantium necessitatibus. Incidunt, dolorem, officiis?</p>
-                        <p>Mollitia impedit omnis ullam earum est, quaerat consectetur voluptates quia, dolore asperiores ipsum eligendi quae iste, facere porro debitis nostrum obcaecati culpa eius perspiciatis alias distinctio. Perferendis, magnam mollitia fuga.</p>
-                        <p><a href="#" class="btn btn-danger text-white">Contact Agent</a></p>
+                        <?php
+                        $des=$_GET['des'];
+                          echo "<p>";
+                          echo $des;
+                          echo "</p>";
+                          ?>
+                        <a href="#" class="btn btn-danger text-white">Contact Agent</a>
                     </div>
                     
+                  
+                        
                     <div class="update-section col">
                         <div class="update">
                             <div class="row align-items-center justify-content-center text-center">
@@ -113,7 +164,6 @@
                 </div>
             </div>
         </div>
-
 
     </div>
     <!-- Body Content END -->
