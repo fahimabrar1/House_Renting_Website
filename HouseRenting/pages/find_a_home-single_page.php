@@ -1,3 +1,9 @@
+<?php
+    require("../php/connect.php");
+?>
+<?php
+      require("../php/update_page.php");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -18,7 +24,7 @@
     <div class="body_top">
         <div class="mynav">
             <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand text-white" href="../pages/index.php"> <img src="../resources/HouseRenting.png" alt="#">
+                <a class="navbar-brand text-white" href="../pages/index.php"> <img src="../resources/HouseRenting.png" alt="#">
                     <h5>HOUSE RENT</h5>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,9 +33,10 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                       
-                       <?php
-                        
+
+                        <?php 
+                            
+
                             echo "
                         <li class=\"nav-item active\">
                             <a class=\"nav-link text-white\" href=\"../pages/index.php\">Home <span class=\"sr-only\">(current)</span></a>
@@ -41,14 +48,22 @@
                             <a class=\"nav-link text-white\" href=\"../pages/Post_for_rent.php\">Post For Rent</a>
                         </li>
                         ";
+                          if(isset($_SESSION['email'])){
+                                 echo "
+                            <li class=\"nav-item\">
+                                <a class=\"nav-link text-white\" href=\"../HouseRenting/php/logout.php\">Log out</a>
+                            </li>
+                            ";
+                            }else{
                         echo "
+                        
                         <li class=\"nav-item\">
                             <a class=\"nav-link text-white\" href=\"../pages/Sign_up.php\">Sign Up</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link text-white\" href=\"../pages/log_in.php\">Log In</a>
                         </li>";
-                        
+                          }
                         ?>
                     </ul>
                 </div>
@@ -60,111 +75,185 @@
     <!-- Body Content START -->
     <div class="body-content">
         <div class="ftco-blocks-cover-1">
-           
-           <?php
-            $src=$_GET['src'];
+
+            <?php
+            
             
             $var= "<div class=\"site-section-cover overlay p-5\" data-stellar-background-ratio=\"0.5\" style=\"background-image: url('";
 
             $var1="')\">";
-
             echo $var;
             echo $src;
             echo $var1;
-           ?> 
-                <div class="container">
-                    <div class="row align-items-center justify-content-center text-center">
-                        <div class="col-md-7">
-                            <?php
-                            $title=$_GET['title'] ;
+           ?>
+            <div class="container">
+                <div class="row align-items-center justify-content-center text-center">
+                    <div class="col-md-7">
+                        <?php
                             echo "<h1 class=\"mb-2 mt-2\">";
                             echo $title;
                             echo "</h1>";
                             ?>
-                            <p class="text-center mb-5"><span class="small address d-flex align-items-center justify-content-center"> <span class="icon-room mr-3 text-primary"></span> 
-                            <?php
-                                $location=$_GET['location'];
+                        <p class="text-center mb-5"><span class="small address d-flex align-items-center justify-content-center"> <span class="icon-room mr-3 text-primary"></span>
+                                <?php
                                 echo "<span>";
                                 echo $location;
                                 echo "</span>";
                               ?>
                             </span></p>
 
-                            <div class="d-flex media-38289 justify-content-around mb-3">
-                                <div class="sq d-flex align-items-center"><i class="fas fa-vector-square pr-1"></i>
+                        <div class="d-flex media-38289 justify-content-around mb-3">
+                            <div class="sq d-flex align-items-center"><i class="fas fa-vector-square pr-1"></i>
                                 <?php
-                                $sq=$_GET['sq'];
                                 echo "<span>";
                                 echo $sq;
                                 echo " Sq Ft.</span>";
                                  ?>
-                             </div>
-                                <div class="bed d-flex align-items-center"><i class="fas fa-bed pr-1"></i>
+                            </div>
+                            <div class="bed d-flex align-items-center"><i class="fas fa-bed pr-1"></i>
                                 <?php
-                                $bedroom=$_GET['bedroom'];
                                 echo "<span>";
                                 echo $bedroom;
                                 echo "</span>";
                                  ?>
-                                </div>
-                                <div class="bath d-flex align-items-center"><i class="fas fa-bath pr-1"></i>
+                            </div>
+                            <div class="bath d-flex align-items-center"><i class="fas fa-bath pr-1"></i>
                                 <?php
                                 $bathroom=$_GET['bathroom'];
                                 echo "<span>";
                                 echo $bathroom;
                                 echo "</span>";
                                  ?>
-                             </div>
                             </div>
-                            <div class="container">
-                                <div class="row justify-content-center media-38289 mb-5">
-                                    <?php
+                        </div>
+                        <div class="container">
+                            <div class="row justify-content-center media-38289 mb-5">
+                                <?php
                                 $price=$_GET['price'];
                                 echo "<span class=\"h1 text-danger d-block\">";
                                 echo $price;
                                 echo "</span>";
                                  ?>
-                                </div>
                             </div>
-                            <p><a href="#" class="btn btn-danger text-white px-4 py-3">Buy Now</a></p>
                         </div>
+                        <p><a href="#" class="btn btn-danger text-white px-4 py-3">Buy Now</a></p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <div class="site-section">
-            <div class="container">
-                <div class="row">
-                    <div class="descripton col">
-                        <?php
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="descripton col">
+                    <?php
                         $des=$_GET['des'];
                           echo "<p>";
                           echo $des;
                           echo "</p>";
                           ?>
-                        <a href="#" class="btn btn-danger text-white">Contact Agent</a>
-                    </div>
-                    
-                  
-                        
-                    <div class="update-section col">
-                        <div class="update">
-                            <div class="row align-items-center justify-content-center text-center">
-                                <button type="button" class="btn btn-light mb-4 p-3 col-md-12">UPDATE</button>
-                            </div>
-                            <div class="row align-items-center justify-content-center text-center">
-                                <button type="button" class="btn btn-light mt-4 p-3 col-md-12">DELETE HOUSE</button>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <!--Other Contents can be added-->
+                    <a href="#" class="btn btn-danger text-white">Contact Agent</a>
                 </div>
+
+
+
+                <div class="update-section col">
+                    <div class="update">
+                        <div class="row align-items-center justify-content-center text-center">
+                            <button type="button" class="btn btn-light col-md-12 p-3" data-toggle="modal" data-target="#exampleModalCenter">
+                                UPDATE
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="Post">
+
+
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+
+
+                                                <div class="row align-items-center justify-content-center text-center">
+
+                                                    <div class="col-md-3 form-group">
+                                                        <label>Square Feet :</label>
+                                                    </div>
+                                                    <div class="col-md-6 form-group">
+                                                        <input name="updt_sqft" type="text" class="form-control" placeholder="Sq Ft." required>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="row align-items-center justify-content-center text-center">
+                                                    <div class="col-md-3 form-group">
+                                                        <label>Price :</label>
+                                                    </div>
+                                                    <div class="col-md-6 form-group">
+                                                        <input name="updt_price" type="text" class="form-control" placeholder="Price" required>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row align-items-center justify-content-center text-center">
+                                                    <div class="col-md-3 form-group">
+                                                        <label>Bedrooms :</label>
+                                                    </div>
+                                                    <div class="col-md-6 form-group">
+                                                        <select name="updt_bedroom" id="" class="form-control w-100" required>
+                                                            <option value="">Any Bedrooms</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3+</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-center justify-content-center text-center">
+                                                    <div class="col-md-3 form-group">
+                                                        <label>Bathrooms :</label>
+                                                    </div>
+                                                    <div class="col-md-6 form-group">
+                                                        <select name="updt_bathroom" id="" class="form-control w-100" required>
+                                                            <option value="">Any Bathrooms</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3+</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                                <input name="updatepage" type="submit" class="btn btn-primary" value="Submit"> </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="row align-items-center justify-content-center text-center">
+                            <a href="pageupdate.php" class="btnbtn col-md-12 mb-2 p-3">UPDATE</a>
+                        </div>
+-->
+                        <div class="row align-items-center justify-content-center text-center">
+                            <a href="#" class="btnbtn col-md-12 mt-2 p-3">DELETE HOUSE</a>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Other Contents can be added-->
             </div>
         </div>
-
     </div>
     <!-- Body Content END -->
 

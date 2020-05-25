@@ -95,5 +95,13 @@ body {
     padding: 3rem 2rem;
     margin-top: 1rem;
     border-radius: 1rem;
-
+    
 }
+.site-section .update-section .update .btnbtn{
+    background-color: whitesmoke;
+    color: black;
+    
+    border-radius: 5px;
+    
+}
+
