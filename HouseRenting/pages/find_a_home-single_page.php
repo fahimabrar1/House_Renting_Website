@@ -2,7 +2,10 @@
     require("../php/connect.php");
 ?>
 <?php
-      require("../php/update_page.php");
+      require_once("../php/update_page.php");
+?>
+<?php
+      require("../php/executeupdate.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -82,6 +85,7 @@
             $var= "<div class=\"site-section-cover overlay p-5\" data-stellar-background-ratio=\"0.5\" style=\"background-image: url('";
 
             $var1="')\">";
+            $src=$_GET['src'];
             echo $var;
             echo $src;
             echo $var1;
@@ -91,12 +95,14 @@
                     <div class="col-md-7">
                         <?php
                             echo "<h1 class=\"mb-2 mt-2\">";
+                            $title=$_GET['title'];
                             echo $title;
                             echo "</h1>";
                             ?>
                         <p class="text-center mb-5"><span class="small address d-flex align-items-center justify-content-center"> <span class="icon-room mr-3 text-primary"></span>
                                 <?php
                                 echo "<span>";
+                                $location=$_GET['location'];
                                 echo $location;
                                 echo "</span>";
                               ?>
@@ -106,6 +112,7 @@
                             <div class="sq d-flex align-items-center"><i class="fas fa-vector-square pr-1"></i>
                                 <?php
                                 echo "<span>";
+                                $sq=$_GET['sq'];
                                 echo $sq;
                                 echo " Sq Ft.</span>";
                                  ?>
@@ -113,6 +120,7 @@
                             <div class="bed d-flex align-items-center"><i class="fas fa-bed pr-1"></i>
                                 <?php
                                 echo "<span>";
+                                $bedroom=$_GET['bedroom'];
                                 echo $bedroom;
                                 echo "</span>";
                                  ?>
@@ -246,7 +254,31 @@
                         </div>
 -->
                         <div class="row align-items-center justify-content-center text-center">
-                            <a href="#" class="btnbtn col-md-12 mt-2 p-3">DELETE HOUSE</a>
+                            <button type="button" class="btn btn-light col-md-12 p-3 mt-3" data-toggle="modal" data-target="#exampleModalCenter1">
+                                DELETE HOUSE
+                            </button>
+                             <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="Post">
+
+
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Are You Sure? title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-success pl-4 pr-4" data-dismiss="modal">No</button>
+
+                                                <input name="deletepage" type="submit" class="btn btn-outline-danger pl-4 pr-4" value="Yes"> </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
