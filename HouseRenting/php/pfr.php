@@ -1,36 +1,41 @@
 <?php
     echo "Ready To Signup ";
     session_start();
-    echo $_SESSION['email'];
+    if (empty($_SESSION['email']) ){
+            header("Refresh:0; url=log_in.php");
+    }else{
+        if(isset($_POST['submit_pfr']))
+        {
+            $housetype=$_POST['alltypes_pfr'];
+            $bedrooms=$_POST['anybedrom_pfr'];
+            $bathrooms=$_POST['anybathroom_pfr'];
+            $housetitle=$_POST['title_pfr'];
+            $squarearea=$_POST['sqft_pfr'];
+            $description=$_POST['description_pfr'];
+            $price=$_POST['price_pfr'];
 
-    if(isset($_POST['submit_pfr'])){
-        $housetype=$_POST['alltypes_pfr'];
-        $bedrooms=$_POST['anybedrom_pfr'];
-        $bathrooms=$_POST['anybathroom_pfr'];
-        $housetitle=$_POST['title_pfr'];
-        $squarearea=$_POST['sqft_pfr'];
-        $description=$_POST['description_pfr'];
-        $price=$_POST['price_pfr'];
-        
-        $img="../resources/".$_FILES['image']['name'];
-        $target="../resources/".basename($_FILES['image']['name']);
+            $img="../resources/".$_FILES['image']['name'];
+            $target="../resources/".basename($_FILES['image']['name']);
 
-        if (move_uploaded_file($_FILES['image']['name'], $target)) {
-            echo "Moveds image";
-        }
+            if (move_uploaded_file($_FILES['image']['name'], $target))
+            {
+                echo "Moveds image";
+            }
             $user="SELECT iduser FROM `user` WHERE Email='fahim.abrar101@gmail.com'";
-            if($temp=$conn->query($user)){
-                if ($temp->num_rows == 1 ) {
+            if($temp=$conn->query($user))
+            {
+                if ($temp->num_rows == 1 )
+                {
 
-                $temp_getid=$temp->fetch_assoc();
-                $getid=$temp_getid["iduser"];
-                echo $getid;
+                    $temp_getid=$temp->fetch_assoc();
+                    $getid=$temp_getid["iduser"];
+                    echo $getid;
                 }
-                }else{
-                    echo "query error";
-                }
+            }else{
+                echo "query error";
+            }
 
-        $sql="INSERT INTO `rent_house_type`(
+            $sql="INSERT INTO `rent_house_type`(
                     `House_Type`,
                     `BedRooms`,
                     `BathRooms`,
@@ -52,11 +57,13 @@
                     $price,
                     $getid
                 )";
-        if($conn->query($sql)){
-            echo "Submitted rent_house_type "; 
-        }else{
-            echo "query error";
+            
+            if($conn->query($sql)){
+                echo "Submitted rent_house_type "; 
+            }else{
+                echo "query error";
         }
+            
         $area=$_POST['area_pfr'];
         $city=$_POST['city_pfr'];
         $streetname=$_POST['streetname_pfr'];
@@ -87,5 +94,5 @@
             echo "query error";
         }
     }
-
+}
 ?>

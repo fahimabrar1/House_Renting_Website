@@ -4,51 +4,48 @@ if(isset($_POST['updatepage'])){
 
    echo $id;
 
-        $bedrooms=$_POST['updt_bedroom'];
-        $bathrooms=$_POST['updt_bathroom'];
-        $squarearea=$_POST['updt_sqft'];
-        $price=$_POST['updt_price'];
-         $sql="SELECT rent_house_type.idrent_house_type,rent_house_type.SrcImg,rent_house_type.BedRooms,rent_house_type.BathRooms,rent_house_type.Square_Area,rent_house_type.Price,rent_house_type.Description,rent_house_type.House_Title,rent_house_type_address.Area,rent_house_type_address.City,rent_house_type_address.Street_Name,rent_house_type_address.Postal_Code,rent_house_type_address.Thana,rent_house_type_address.Road_No FROM rent_house_type_address INNER JOIN rent_house_type ON rent_house_type_address.idrent_house_type = rent_house_type.idrent_house_type WHERE rent_house_type.idrent_house_type=$id";
+    $bedrooms=$_POST['updt_bedroom'];
+    $bathrooms=$_POST['updt_bathroom'];
+    $squarearea=$_POST['updt_sqft'];
+    $price=$_POST['updt_price'];
+    $sql="SELECT rent_house_type.idrent_house_type,rent_house_type.SrcImg,rent_house_type.BedRooms,rent_house_type.BathRooms,rent_house_type.Square_Area,rent_house_type.Price,rent_house_type.Description,rent_house_type.House_Title,rent_house_type_address.Area,rent_house_type_address.City,rent_house_type_address.Street_Name,rent_house_type_address.Postal_Code,rent_house_type_address.Thana,rent_house_type_address.Road_No FROM rent_house_type_address INNER JOIN rent_house_type ON rent_house_type_address.idrent_house_type = rent_house_type.idrent_house_type WHERE rent_house_type.idrent_house_type=$id";
 
     
-        if($result = $conn->query($sql))
+    if($result = $conn->query($sql))
         {
             echo "EXECUITED";
         }else{
             echo "Not Executed";
-        }       
-        if ($row = $result->fetch_assoc())
+        }   
+    
+    if ($row = $result->fetch_assoc())
          {
 
         echo "all ok";
        
-            $sql1="UPDATE
-                        rent_house_type
-                    SET
-                        BedRooms = $bedrooms,
-                        BathRooms = $bathrooms,
-                        Square_Area = $squarearea,
-                        Price = $price
-                    WHERE
-                        rent_house_type.idrent_house_type = $id;";
-                }
-        if($conn->query($sql1)){
-            echo "Submitted rent_house_type "; 
-           
-                        Submit($id,$conn);
+        $sql1="UPDATE
+                    rent_house_type
+                SET
+                    BedRooms = $bedrooms,
+                    BathRooms = $bathrooms,
+                    Square_Area = $squarearea,
+                    Price = $price
+                WHERE
+                    rent_house_type.idrent_house_type = $id;";
+          }
+        if($conn->query($sql1))
+            {
+                echo "Submitted rent_house_type "; 
+                Submit($id,$conn);
 
         }else{
             echo "broken web";
-
-                        Submit($id,$conn);
-
-
-            // echo "<a href=\"../pages/find_a_home-single_page.php?src=$src&&sq=$sq&&bedroom=$bedroom&&bathroom=$bathroom&&price=$price&&location=$location&&id=$id&&des=$description&&title=$housetitle\"></a>";
+            Submit($id,$conn);
         }
-        
-
     }
-if(isset($_POST['deletepage'])){
+    
+if(isset($_POST['deletepage']))
+    {
     $id=$_SESSION['pageid'];
 
    echo $id;
@@ -78,7 +75,8 @@ if(isset($_POST['deletepage'])){
         }else{
             echo "Not Executed";
         }       
-        if ($row = $result->fetch_assoc()) {
+        if ($row = $result->fetch_assoc()) 
+        {
             $src=$row["SrcImg"];
             $sq=$row["Square_Area"];
             $bedrooms= $row["BedRooms"];
@@ -91,6 +89,6 @@ if(isset($_POST['deletepage'])){
             header("Refresh:0; url=find_a_home-single_page.php?src=".$src."&&sq=".$sq."&&bedroom=".$bedrooms."&&bathroom=".$bathrooms."&&price=".$price."&&location=".$location."&&id=".$id."&&des=".$des."&&title=".$housetitle);
         
         
-            }
         }
+    }
 ?>
