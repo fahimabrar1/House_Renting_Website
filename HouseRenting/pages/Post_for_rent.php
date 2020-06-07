@@ -53,7 +53,7 @@
                           if(isset($_SESSION['email'])){
                                  echo "
                             <li class=\"nav-item\">
-                                <a class=\"nav-link text-white\" href=\"../HouseRenting/php/logout.php\">Log out</a>
+                                <a class=\"nav-link text-white\" href=\"../php/logout.php\">Log out</a>
                             </li>
                             ";
                             }else{
@@ -158,7 +158,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 form-group">
-                                                   <input type="file" name="image">
+                                                <input type="file" name="image">
 
                                             </div>
                                         </div>
